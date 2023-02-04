@@ -8,7 +8,11 @@ require("dotenv").config();
 //incoming data is data coming to server. incoming data is req.body
 //You will need it for POST and PUT requests.
 //You will not need it for GET and DELETE requests.
+
+
 app.use(express.json())
+app.use(express.urlencoded({extended:false}));
+app.use(express.static(path.join(__dirname, 'public')));
 
 const {Configuration, OpenAIApi} = require("openai"); 
 const configuration = new Configuration({
@@ -16,7 +20,7 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-app.get("/", (req, res) => {
+app.get("/test2", (req, res) => {
     res.send("hello this is test message. If you want to see html, go to /test route")
 })
 
@@ -71,14 +75,9 @@ app.post("/chat2", async (req, res) => {
     try {
         const response = await openai.createCompletion({
             model: "text-davinci-003",
-            prompt: `
-                {prompt}
-
-                Time complexity of this function is 
-                ###
-            `,
+            prompt: "How are you?",
             max_tokens: 64,
-            temperature: 0,
+            temperature: 0, 
             top_p: 1.0,
             frequency_penalty: 0.0,
             presence_penalty: 0.0,
@@ -98,6 +97,56 @@ app.post("/chat2", async (req, res) => {
         });
     }
 })
+app.get("/chat3", (req, res) => {
+    res.sendFile(__dirname + "/test.html");
+})
+app.post("/chat3", (req, res) => {
+    const wordy = req.body.input1;
+    console.log(wordy);
+    res.send(wordy);
+    res.end();
+})
+
+
+
+app.get("/chat4", (req, res) => {
+    res.sendFile(__dirname + "/test.html");
+})
+app.post("/chat4", async (req, res) => {
+    const word2 = req.body.input2;
+
+    const response = await openai.createCompletion({
+        model: "text-davinci-003",
+        prompt: word2,
+    });
+    res.send(response.data.choices[0].text);
+    res.end();
+
+})
+
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/index.html");
+})
+app.post("/", async (req, res) => {
+    console.log(req.body);
+    res.send("form submit works")
+    res.end();
+
+})
+/*
+    const wordy = await req.body.input1;
+
+    const response = await openai.createCompletion({
+        model: "text-davinci-003",
+        prompt: wordy,
+    });
+
+    return res.status(200).json({
+        success: true,
+        data: response.data.choices[0].text
+    })
+*/
+
 
 //If port is available in environment, we can use that,
 //if not we can just use 4000.

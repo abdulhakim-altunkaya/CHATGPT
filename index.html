@@ -4,26 +4,280 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href="/styles.css">
     <title>Document</title>
 </head>
 <body>
-    <p>everthing works fine</p>
+  
+    <div class="formbold-main-wrapper">
+      <!-- Author: FormBold Team -->
+      <!-- Learn More: https://formbold.com -->
+      <div class="formbold-form-wrapper">
+        <img class="hairImg" src="/hair-loss.png">
+        <form action="/" method="POST">
+          <div class="formbold-input-flex">
+            <div>
+              <label for="firstname" class="formbold-form-label"> First name </label>
+              <input type="text" name="firstname" id="firstname" placeholder="Mikalojus Konstantinas" class="formbold-form-input" />
+            </div>
+            <div>
+              <label for="lastname" class="formbold-form-label"> Last name </label>
+              <input type="text" name="lastname" id="lastname" placeholder="Čiurlionis" class="formbold-form-input" />
+            </div>
+          </div>
+    
+          <div class="formbold-mb-5">
+            <label for="qusOne" class="formbold-form-label">
+              Where have you been experiencing hair loss?
+            </label>
+    
+            <div class="formbold-radio-flex">
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusOne" id="qusOne" value="front"/>
+                  Front
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+    
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusOne" id="qusOne" value="crown"/>
+                  Crown
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+    
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusOne" id="qusOne" value="neck"/>
+                  Upper neck
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+    
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusOne" id="qusOne" value="sides"/>
+                  Sides
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+    
+          <div class="formbold-mb-5">
+            <label for="qusTwo" class="formbold-form-label">
+              What is your age group?
+            </label>
+    
+            <div class="formbold-radio-flex">
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusTwo" id="qusTwo" value="15-25"/>
+                  15-25
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+    
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusTwo" id="qusTwo" value="26-35"/>
+                  26-35
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+    
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusTwo" id="qusTwo" value="36-55"/>
+                  36-55
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+    
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusTwo" id="qusTwo" value="56-75"/>
+                  56-75
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+    
+          <div class="formbold-mb-5">
+            <label for="qusThree" class="formbold-form-label">
+              How much hair have you lost in the last 2 years?
+            </label>
+    
+            <div class="formbold-radio-flex">
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusThree" id="qusThree" value="no hair loss"/>
+                  None
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+    
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusThree" id="qusThree" value="Little (less than 10%)"/>
+                  Little (less than 10%)
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+    
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusThree" id="qusThree" value="Some (10%-25%)"/>
+                  Some (10%-25%)
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+    
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusThree" id="qusThree" value="A lot (more than 25%)"/>
+                  A lot (more than 25%)
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+          
 
-    <form action="/test/submit" method="post">
-        <input type="text" name="id">
-        <button type="submit">SUBMIT</button>
-    </form>
-    <br>
-    <br>
-    <form action="/chat" method="post">
-        <input type="text" name="something">
-        <button type="submit">SUBMIT</button>
-    </form>
-    <br>
-    <br>
-    <form action="/chat2" method="post">
-        <input type="text" name="anything">
-        <button type="submit">SUBMIT</button>
-    </form>
+          <div class="formbold-mb-5">
+            <label for="qusFour" class="formbold-form-label">
+              Tell me about any family history of hair loss?
+            </label>
+    
+            <div class="formbold-radio-flex">
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusFour" id="qusFour" value="parents"/>
+                  Parents
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+    
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusFour" id="qusFour" value="siblings"/>
+                  Siblings
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+    
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusFour" id="qusFour" value="Father side of the family"/>
+                  Father side of the family
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+    
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusFour" id="qusFour" value="Mother side of the family"/>
+                  Mother side of the family
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusFour" id="qusFour" value="Parents did not lose hair"/>
+                  None
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusFour" id="qusFour" value="not sure of family hair loss history"/>
+                  Not sure
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="formbold-mb-5">
+            <label for="qusFive" class="formbold-form-label">
+              Do you have any illnesses or health conditions we should know?
+            </label>
+    
+            <div class="formbold-radio-flex">
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusFive" id="qusFive" value="no sickness" />
+                  None
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+    
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusFive" id="qusFive" value="diabetes"/>
+                  Diabetes
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+    
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusFive" id="qusFive" value="Blood pressure"/>
+                  Blood pressure
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+    
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusFive" id="qusFive" value="thyroid disorders"/>
+                  Any thyroid disorders
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusFive" id="qusFive" value="Hepatitis"/>
+                  Hepatitis
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label">
+                  <input class="formbold-input-radio" type="radio" name="qusFour" id="qusFour" value="another sickness"/>
+                  Other
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="formbold-input-flex">
+            <div>
+              <label for="email" class="formbold-form-label"> Your E-mail </label>
+              <input type="text" name="email" id="email" placeholder="E-mail" class="formbold-form-input" />
+            </div>
+            <div>
+              <label for="telephone" class="formbold-form-label"> Telephone Number </label>
+              <input type="text" name="telephone" id="telephone" placeholder="Telephone" class="formbold-form-input" />
+            </div>
+          </div>
+
+          
+          <button class="formbold-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+
+
 </body>
 </html>
