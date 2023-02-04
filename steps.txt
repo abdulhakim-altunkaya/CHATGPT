@@ -1,0 +1,43 @@
+1) create github repo and clone it to computer
+
+2) npm init -y
+If you do this step now, then make sure you change "main": "index.js"
+to "main": "server.js"
+
+3) npm install express dotenv openai
+
+4) open an account on https://platform.openai.com/ or "beta.openai.com"
+and click on your on top right, then click on "api keys".
+Then click on "generate api keys" and copy your api keys.
+
+5) Create .env file and paste inside. 
+OPENAI_API_KEY="sk-jP4CNnfVXX4OfvdejTE3Tr6BlbkFJnP1NjS2bkBwc2HUgItOW"
+
+6) create a .gitignore file and paste inside
+node_modules
+.env
+
+7) create a very simple index.html file at the root of your project
+
+8) then create server.js file:
+
+const express = require("express");
+const app = express();
+const path = require("path");
+app.get("/", (req, res) => {
+    res.send("hello this is test message. If you want to see html, go to /test route")
+})
+app.get("/test", (req, res) => {
+    res.sendFile(path.join(__dirname + "/index.html"));
+})
+const server = app.listen(4000);
+const portNumber = server.address().port;
+console.log(`port is open my good sir and its number is ${portNumber}`);
+
+8) then test your server if it works and check routes: 
+node server.js
+
+9) Then add api key inside your server.js:
+
+
+
