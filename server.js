@@ -12,6 +12,7 @@ require("dotenv").config();
 app.use(express.json())
 app.use(express.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname, 'public')));
+app.set("view engine", "ejs");
 
 const {Configuration, OpenAIApi} = require("openai"); 
 const configuration = new Configuration({
@@ -55,11 +56,12 @@ app.post("/", async (req, res) => {
         max_tokens: 1100,
         temperature: 0,
     });
-    const data = await response.data.choices[0].text;
+    const data = response.data.choices[0].text;
+    res.render("report", {data});
+    /*
     const html = `<html><body><h1>${data}</h1></body></html>`;
     res.send(html);
-    res.end();
-
+    */
 })
 
 

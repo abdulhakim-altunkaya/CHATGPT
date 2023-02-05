@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include("./partials/partial_2") %>
+  </head>
+  <body>
+    <%- include("./partials/partial_1") %>
+
+    <div class="new_main">
+      <div id="searchBarArea">
+        <form id="contact_form0" action="/" method="post">
+          <label for="input1">Kelime Arama - Consulte o Dicionário </label><br>
+          <span><input class="inputAreas" type="text" name="input1" id="mainInput" value=<%= wordy %> autofocus required>&nbsp;&nbsp;&nbsp;
+            <button class="commentButton">Ara-Pesquisar</button></span>
+
+        </form>
+      </div>
+      <%- include("./partials/partial_3result") %>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      document.getElementById("mainInput").select();
+    });
+    </script>
+  </body>
+</html>
