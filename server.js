@@ -55,7 +55,9 @@ app.post("/", async (req, res) => {
         max_tokens: 1100,
         temperature: 0,
     });
-    res.send(response.data.choices[0].text);
+    const data = await response.data.choices[0].text;
+    const html = `<html><body><h1>${data}</h1></body></html>`;
+    res.send(html);
     res.end();
 
 })
