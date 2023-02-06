@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
-var http = require('http');
-var fs = require('fs');
+
 const path = require("path");
 
 require("dotenv").config();
@@ -29,7 +28,10 @@ const openai = new OpenAIApi(configuration);
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
 })
-app.post("/", async (req, res) => {
+app.get("/result", (req, res) => {
+    res.render("report", {data2: ""});
+})
+app.post("/", async (req, res, next) => {
     console.log(req.body);
     const formInput = `
     Prepare a medical situation report on hair loss.
@@ -61,12 +63,17 @@ app.post("/", async (req, res) => {
         temperature: 0,
     });
 
-
+    res.render('report', { data2: response.data.choices[0].text });
+    next();
+    
+    /*
+    var http = require('http');
+    var fs = require('fs');
     fs.writeFileSync("./response.txt", response.data.choices[0].text);
     res.sendFile(path.join(__dirname, "./response.txt"));
-    /*
+
     const data = response.data.choices[0].text;
-    res.render('report', { data2: response.data.choices[0].text });
+    
 
     const data = response.data.choices[0].text;
     res.render("report", {data});
