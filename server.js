@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
-
+var http = require('http');
+var fs = require('fs');
 const path = require("path");
 
 require("dotenv").config();
@@ -59,9 +60,14 @@ app.post("/", async (req, res) => {
         max_tokens: 1100,
         temperature: 0,
     });
-    const data = response.data.choices[0].text;
-    res.render('report', { data2: data });
+
+
+    fs.writeFileSync("./response.txt", response.data.choices[0].text);
+    res.sendFile(path.join(__dirname, "./response.txt"));
     /*
+    const data = response.data.choices[0].text;
+    res.render('report', { data2: response.data.choices[0].text });
+
     const data = response.data.choices[0].text;
     res.render("report", {data});
 

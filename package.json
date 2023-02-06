@@ -1,12 +1,9 @@
 {
-  "homepage": "https://github.com/abdulhakim-altunkaya/CHATGPT"
   "name": "chatgpt",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
