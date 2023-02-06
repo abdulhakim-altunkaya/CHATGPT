@@ -5,6 +5,9 @@ const path = require("path");
 
 require("dotenv").config();
 
+
+
+
 //express.json() is used to recognize incoming data as json.
 //incoming data is data coming to server. incoming data is req.body
 //You will need it for POST and PUT requests.
@@ -57,8 +60,13 @@ app.post("/", async (req, res) => {
         temperature: 0,
     });
     const data = response.data.choices[0].text;
-    res.render("report", {data});
+    res.render('report', { data2: data });
     /*
+    const data = response.data.choices[0].text;
+    res.render("report", {data});
+
+    ---------
+
     const html = `<html><body><h1>${data}</h1></body></html>`;
     res.send(html);
     */
