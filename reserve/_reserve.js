@@ -208,3 +208,56 @@ app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
 module.exports = app;
 module.exports.handler = serverless(app);
 */
+
+
+
+/*
+import { useEffect, useState } from "react";
+        let[prompttext,setPrompttext] = useState("");
+  let[prompttext2,setPrompttext2] = useState("");
+  const api = process.env.REACT_APP_CHATGPT_API;
+  const configuration = new Configuration({
+      apiKey: api
+  })
+  const openai = new OpenAIApi(configuration);
+
+
+  
+  const sendMessage = async () => {
+      const response = await openai.createCompletion({
+        prompt : "how are you doing?",
+        model : "text-davinci-003",
+        temperature : 1,
+        max_tokens: 1100
+      })
+      setPrompttext2(response.data.choices[0].text );
+  }
+
+
+
+  const handleSubmitTest = async () => {
+    const response = await openai.createCompletion({
+      prompt : prompttext,
+      model : "text-davinci-003",
+      temperature : 1,
+      max_tokens: 1100
+    })
+    setPrompttext2(response.data.choices[0].text);
+  } 
+
+
+        <div>
+        <form action="" >
+          <input type="text" name="prompt"
+          value={prompttext} onChange={(e) => setPrompttext(e.target.value)}/>
+          <button type="submit">REACT TEST SUBMIT</button>
+        </form>
+        <button onClick={handleSubmitTest}>REACT TEST SUBMIT</button>
+        <p>{prompttext2}</p>
+      </div>
+
+
+
+
+
+*/
